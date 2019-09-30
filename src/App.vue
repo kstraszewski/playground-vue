@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-content>
-      <HelloWorld :msg="msg"/>
+      <HelloWorld :msg.sync="msg"/>
     </v-content>
   </v-app>
 </template>

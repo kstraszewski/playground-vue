@@ -6,6 +6,7 @@
       <v-flex>
         {{msg}}
       </v-flex>
+      <v-btn depressed primary @click="respond()">Respond</v-btn>
     </v-layout>
   </v-container>
 </template>
@@ -17,6 +18,11 @@ import Vue from 'vue';
 @Component
 export default class HelloWorld extends Vue{
   @Prop({required: true, type: String,})
-  private msg!: string;
+  public msg!: string;
+
+  public respond(){
+    console.log('respond');
+    this.$sync('msg', `${this.msg} Polo`);
+  }
 }
 </script>
