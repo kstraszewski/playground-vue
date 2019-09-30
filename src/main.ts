@@ -6,6 +6,7 @@ import './registerServiceWorker';
 import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false;
+
 Vue.prototype.$sync = function(key: string, value: any) {
   this.$emit(`update:${key}`, value);
 };

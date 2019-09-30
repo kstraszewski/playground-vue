@@ -21,7 +21,6 @@ export default class HelloWorld extends Vue{
   public msg!: string;
 
   public respond(){
-    console.log('respond');
     this.$sync('msg', `${this.msg} Polo`);
   }
 }
