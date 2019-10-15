@@ -28,8 +28,13 @@ import {UsersApi} from '@/api/UsersApi';
 export default class Home extends Vue {
   private users: User[] = [];
 
-  async mounted() {
+  async mounted(): Promise<void> {
     this.users = await UsersApi.getAllUsers();
   }
+
+  getUserFullName(user: User): string{
+    return `${user.first_name} ${user.last_name}`;
+  }
+
 };
 </script>

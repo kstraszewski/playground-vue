@@ -18,13 +18,10 @@ export class UserDTO implements IUser{
 export default class User extends UserDTO {
   constructor(dto: UserDTO){
     super();
-    if(dto){
-      Object.assign(this, dto);
-    }
+    Object.assign(this, dto);
   }
 
   get fullName(): string {
     return `${this.first_name} ${this.last_name}`;
   }
-
 }
